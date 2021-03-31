@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mp?useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+logging:
+  level:
+    root: warn
+    liuyang.testmbp.mapper: trace
+    liuyang.testmbp.service: trace
+  pattern:
+    console: '%p%m%n' # 只关注SQL语句
+
+mybatis-plus:
+  mapper-locations: classpath*:liuyang/testmbp/mapper/mapping/*.xml
+  # Maven多模块项目的扫描路径需要以classpath*开头(即加载多个jar包下的XML)
+  # 实测如下配置也可：
+  # mapper-locations: classpath:liuyang/testmbp/mapper/mapping/*.xml
+  #global-config:
+  #  db-config:
+  #    id-type: uuid
