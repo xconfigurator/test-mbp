@@ -1,6 +1,8 @@
 # MyBatis-Plus
 Spring Boot 环境
 
+测试挪动工作空间后提交到GitHub
+
 ## 初始化项目
 ```shell
 …or create a new repository on the command line
