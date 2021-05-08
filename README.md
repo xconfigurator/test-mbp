@@ -18,3 +18,11 @@ git push -u origin main
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 ```
+
+## 测试在MBP环境中使用MyBatis原生写法的样例
+- 多表联查情况（分析场景）
+    - 使用*Mapper.xml
+    - 多表联查分页
+    - 多表联查缓存
+    
+## 
