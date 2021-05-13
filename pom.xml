@@ -67,6 +67,7 @@
         </dependency>
 
         <!-- MyBatis-Plus -->
+        <!-- pdt-nms 使用的版本是 mybatis-plus-boot-starter 3.1.1 -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
