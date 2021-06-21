@@ -595,7 +595,6 @@ public class UserMapperEssentialTest {
         userLambdaQueryWrapper.eq(User::getName, "liuyang");
         int i = userMapper.delete(userLambdaQueryWrapper);
         log.info("影响记录数：" + i);
-
     }
 
     // 6-1 AR模式

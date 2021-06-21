@@ -1,5 +1,7 @@
 # MyBatis-Plus
-Spring Boot 环境
+Spring Boot 环境  
+[MyBatis-Plus入门](https://www.imooc.com/learn/1130)  
+[MyBatis-Plus进阶](https://www.imooc.com/learn/1171)
 
 测试挪动工作空间后提交到GitHub
 

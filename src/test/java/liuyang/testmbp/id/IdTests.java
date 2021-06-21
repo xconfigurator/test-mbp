@@ -14,6 +14,10 @@ import org.junit.jupiter.api.Test;
 @Slf4j
 public class IdTests {
 
+    /**
+     * IdWorker.getId
+     * IdWorker.get32UUID
+     */
     @Test
     public void test311() {
         log.info("test311");
@@ -27,6 +31,11 @@ public class IdTests {
         log.info(uuid);// e.g. b6a328f850b3e33c51492c3182b1557d
     }
 
+    /**
+     * DefaultIdentifierGenerator
+     * .netId
+     * .netUUID
+     */
     @Test
     public void test342() {
         log.info("test342");
