@@ -522,6 +522,7 @@ public class UserMapperEssentialTest {
         UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
         updateWrapper.eq("id", 1376385836864389122l);
 
+
         int rows = userMapper.update(user, updateWrapper);
         log.info("影响记录数：" + rows);
     }
