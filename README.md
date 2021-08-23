@@ -30,3 +30,6 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
     - 多表联查缓存
     
 ## 
+
+## 打包：跳过测试打包
+>package -DskipTests -f pom.xml
