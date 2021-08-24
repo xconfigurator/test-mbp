@@ -303,9 +303,9 @@ public class UserMapperEssentialTest {
         params.put("name", "王天风");
         params.put("age", 25);
         params.put("age", null);
-        // queryWrapper.allEq(params);// is null
-        // queryWrapper.allEq(params, false); // 忽略null
-        queryWrapper.allEq((k, v) -> !k.equals("name"), params);// name不被加入where
+        //queryWrapper.allEq(params);// is null
+        queryWrapper.allEq(params, false); // 忽略null
+        queryWrapper.allEq((k, v) -> !k.equals("name"), params);// name不被加入where // 也可以通过值过滤
         List<User> users = userMapper.selectList(queryWrapper);
         users.forEach(System.out::println);
     }

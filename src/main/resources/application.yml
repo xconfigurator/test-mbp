@@ -20,5 +20,9 @@ mybatis-plus:
   # 实测如下配置也可：
   # mapper-locations: classpath:liuyang/testmbp/mapper/mapping/*.xml
   #global-config:
-  #  db-config:
-  #    id-type: uuid
+    #db-config:
+      #id-type: id_worker # 默认
+      #table-prefix: tb_
+      #update-strategy: not_null # 默认
+      #insert-strategy: not_null # 默认
+      ##field-strategy: not_null # 旧版本 新版已经废弃field-strategy
