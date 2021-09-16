@@ -1,5 +1,7 @@
 package liuyang.testmbp.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.conditions.update.LambdaUpdateChainWrapper;
 import liuyang.testmbp.entity.User;
@@ -12,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -72,6 +77,31 @@ public class UserServiceTest {
     public void chainRemove() {
         boolean removed = userService.lambdaUpdate().eq(User::getId, 1094592041087729666l).remove();
         log.info(" " + removed);
+    }
+
+    @Test
+    void testDistinct() {
+        QueryWrapper<User> queryWrapper = Wrappers.<User>query();
+        queryWrapper.select("distinct age");
+        List<User> list = userService.list(queryWrapper);
+        for (User user : list) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    void testBetweenDate() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date start = sdf.parse("2019-01-11 14:20:20");
+        Date end = sdf.parse("2019-02-05 11:12:22");
+        //Date end = sdf.parse("2019-02-14 08:31:16");
+
+        LambdaQueryWrapper<User> userLambdaQueryWrapper = Wrappers.<User>lambdaQuery();
+        userLambdaQueryWrapper.between(User::getCreateTime, start, end);
+
+        List<User> list = userService.list(userLambdaQueryWrapper);
+        list.stream().forEach(System.out::println);
     }
 
 }

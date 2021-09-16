@@ -78,7 +78,8 @@ public class UserMapperEssentialTest {
     // 3-1 普通查询
     @Test
     public void selectBatchIds() {
-        List<Long> ids = Arrays.asList(1094592041087729666l, 1088248166370832385l, 1088250446457389058l);
+        //List<Long> ids = Arrays.asList(1094592041087729666l, 1088248166370832385l, 1088250446457389058l);
+        List<Long> ids = Arrays.asList(3l, 10882l, 1l);
         List<User> users = userMapper.selectBatchIds(ids);
         users.forEach(System.out::println);
     }
