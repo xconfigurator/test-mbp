@@ -43,4 +43,9 @@ public class ActorServiceTest {
 
         log.info(" pageData = {}", JSON.toJSONString(pageData));
     }
+
+    @Test
+    void testUpdate() {
+        actorService.lambdaUpdate().eq(Actor::getActorId, 1).set(Actor::getLastName, "xxx").update();
+    }
 }
