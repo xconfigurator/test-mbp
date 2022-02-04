@@ -41,11 +41,28 @@ public class ActorServiceTest {
         List<Actor> records = pageData.getRecords();
         records.stream().forEach(System.out::println);
 
-        log.info(" pageData = {}", JSON.toJSONString(pageData));
+        //log.info(" pageData = {}", JSON.toJSONString(pageData));
+        // resp.setIsEnd(pageData.getCurrent() == pageData.getPages() ? 1 : 0);
+        System.out.println("pageData.getCurrent()=" + pageData.getCurrent());
+        System.out.println("pageData.getPages()=" + pageData.getPages());
+        System.out.println("isEnd = " + (pageData.getCurrent() >= pageData.getPages() ? 1 : 0));
     }
 
     @Test
     void testUpdate() {
         actorService.lambdaUpdate().eq(Actor::getActorId, 1).set(Actor::getLastName, "xxx").update();
+    }
+
+
+    @Test
+    void testDelete() {
+        System.out.println(actorService.list().size());
+
+        LambdaQueryWrapper<Actor> wrapper = Wrappers.<Actor>lambdaQuery();
+        wrapper.eq(Actor::getFirstName, "NICK");
+        wrapper.eq(Actor::getLastName, "WAHLBERG");
+        actorService.remove(wrapper);
+
+        System.out.println(actorService.list().size());
     }
 }

@@ -9,8 +9,8 @@ spring:
 logging:
   level:
     root: warn
-    liuyang.testmbp.mapper: trace
-    liuyang.testmbp.service: trace
+#    liuyang.testmbp.mapper: trace
+#    liuyang.testmbp.service: trace
   pattern:
     console: '%p%m%n' # 只关注SQL语句
 

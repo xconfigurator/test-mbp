@@ -563,7 +563,7 @@ public class UserMapperEssentialTest {
 
     @Test
     public void update05() {
-                        boolean rows = new LambdaUpdateChainWrapper<User>(userMapper).eq(User::getName, "李艺伟").eq(User::getAge, 31).set(User::getAge, 22).update();
+        boolean rows = new LambdaUpdateChainWrapper<User>(userMapper).eq(User::getName, "李艺伟").eq(User::getAge, 31).set(User::getAge, 22).update();
         log.info("影响记录数；" + rows);
 
     }
