@@ -16,6 +16,8 @@ logging:
     console: '%p%m%n' # 只关注SQL语句
 
 mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   mapper-locations: classpath*:liuyang/testmbp/mapper/mapping/*.xml
   # Maven多模块项目的扫描路径需要以classpath*开头(即加载多个jar包下的XML)
   # 实测如下配置也可：

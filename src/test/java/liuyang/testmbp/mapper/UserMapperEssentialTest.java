@@ -502,8 +502,9 @@ public class UserMapperEssentialTest {
     @Test
     public void updateById() {
         User user = new User();
-        user.setId(1376385836864389122l);
+        user.setId(1518501176871575553l);
         user.setAge(28);
+        user.setEmail(null);// 测试点！ ""会发，但null可能不会
         int rows = userMapper.updateById(user);
         log.info("影响记录数：" + rows);
     }
